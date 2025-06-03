@@ -1,0 +1,270 @@
+/* ----------------------------------------
+   General body styling for better presentation
+   ---------------------------------------- */
+   body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 10px 20px 20px 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#page-container {
+    width: 100%;
+    max-width: 1600px;
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+}
+
+#controls-container {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
+    background-color: #fff;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.filter-section {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+}
+.filter-section h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #555;
+}
+
+/* Emotion 버튼, Genre 추가 버튼, 검색 버튼 스타일 */
+#emotion-filters button,
+#add-genre-btn,
+#song-search-btn,
+#clear-search-btn {
+    padding: 8px 12px;
+    margin: 3px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+#emotion-filters button:hover,
+#add-genre-btn:hover,
+#song-search-btn:hover,
+#clear-search-btn:hover {
+    background-color: #e9e9e9;
+}
+#emotion-filters button.active {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+#emotion-filters button.active:hover {
+    background-color: #0056b3;
+}
+
+/* Genre 인풋 및 태그 */
+#genre-input-area,
+#song-search-area {
+    display: inline-block;
+    margin: 3px;
+    position: relative;
+}
+#genre-input,
+#song-search-input {
+    padding: 8px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+#active-genre-tags {
+    margin-top: 8px;
+    min-height: 20px;
+}
+.genre-tag {
+    display: inline-block;
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 12px;
+    margin: 2px 4px;
+    font-size: 11px;
+}
+.genre-tag .remove-genre {
+    margin-left: 6px;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0 2px;
+}
+.genre-tag .remove-genre:hover {
+    color: #333;
+}
+
+/* 자동완성 리스트 */
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+.autocomplete-items div {
+    padding: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+    font-size: 12px;
+}
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+/* 검색 상태 메시지 */
+#song-search-status {
+    color: #d9534f;
+    font-size: 12px;
+    margin-top: 5px;
+    height: 15px;
+}
+
+/* 메인 콘텐츠 레이아웃 */
+#main-content-wrapper {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+#chart-container {
+    flex: 3;
+    min-width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#stats-container {
+    flex: 1.5;
+    min-width: 300px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    max-height: 700px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.stat-chart-wrapper {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.stat-chart-wrapper h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+/* 통계 차트 SVG 스타일 */
+.stat-chart-svg {
+    width: 100%;
+}
+.stat-chart-svg .axis path,
+.stat-chart-svg .axis line {
+    fill: none;
+    stroke: #ccc;
+    shape-rendering: crispEdges;
+}
+.stat-chart-svg .axis text {
+    font-size: 9px;
+    fill: #555;
+}
+.stat-chart-svg .bar {
+    fill: steelblue;
+    transition: fill 0.2s ease-in-out;
+}
+.stat-chart-svg .bar:hover {
+    fill: #2a6496;
+}
+.stat-chart-svg .bar.bar-single-clicked {
+    fill: #1c4a70;
+}
+.stat-chart-svg .bar.bar-dimmed {
+    fill-opacity: 0.3;
+}
+
+.stats-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    color: #888;
+    font-size: 13px;
+}
+
+/* SVG 축(axes) 스타일 */
+.x-axis path,
+.x-axis line,
+.y-axis path,
+.y-axis line {
+    stroke: #ccc;
+    shape-rendering: crispEdges;
+}
+.x-axis text,
+.y-axis text {
+    fill: #555;
+    font-size: 10px;
+}
+
+/* 브러시(brush) 스타일 */
+.brush .selection {
+    fill: steelblue;
+    fill-opacity: 0.4;
+    stroke: #2a6496;
+    stroke-width: 1.5px;
+    shape-rendering: crispEdges;
+}
+
+/* 툴팁 */
+#tooltip {
+    position: absolute;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    pointer-events: none;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: opacity 0.2s ease-in-out;
+    max-width: 250px;
+    word-wrap: break-word;
+}

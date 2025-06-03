@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Data Analysis</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+    <div id="page-container">
+        <h1>Music Data Analysis</h1>
+        <div id="controls-container">
+            <div class="filter-section">
+                <h4>Emotion Filter</h4>
+                <div id="emotion-filters"></div>
+            </div>
+            <div class="filter-section">
+                <h4>Genre Filter - Enter tags</h4>
+                <div id="genre-input-area">
+                    <input type="text" id="genre-input" placeholder="ex: rock, pop" />
+                    <div id="genre-autocomplete-list" class="autocomplete-items" style="display:none;"></div>
+                    <button id="add-genre-btn">Add</button>
+                </div>
+                <div id="active-genre-tags"></div>
+            </div>
+            <div class="filter-section">
+                <h4>Search Song Title</h4>
+                <div id="song-search-area">
+                    <input type="text" id="song-search-input" placeholder="Enter song title" />
+                    <button id="song-search-btn">Search</button>
+                    <button id="clear-search-btn">Clear</button>
+                </div>
+                <div id="song-search-status"></div>
+            </div>
+        </div>
+
+        <div id="main-content-wrapper">
+            <div id="chart-container">
+                <svg id="vis" viewBox="0 0 960 600" preserveAspectRatio="xMidYMid meet"></svg>
+            </div>
+            <div id="stats-container">
+                <div class="stat-chart-wrapper" id="emotion-stat-wrapper">
+                    <h3>Emotion Distribution</h3>
+                    <svg id="emotion-stat-chart" class="stat-chart-svg"></svg>
+                </div>
+                <div class="stat-chart-wrapper" id="tempo-stat-wrapper">
+                    <h3>Tempo Distribution</h3>
+                    <svg id="tempo-stat-chart" class="stat-chart-svg"></svg>
+                </div>
+                <div class="stat-chart-wrapper" id="length-stat-wrapper">
+                    <h3>Length Distribution</h3>
+                    <svg id="length-stat-chart" class="stat-chart-svg"></svg>
+                </div>
+                <div class="stat-chart-wrapper" id="release-year-stat-wrapper">
+                    <h3>Release Year Distribution</h3>
+                    <svg id="release-year-stat-chart" class="stat-chart-svg"></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tooltip"></div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>
