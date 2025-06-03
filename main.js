@@ -723,7 +723,7 @@ const createMockData = () => {
     return Promise.resolve(mockData);
 };
 
-d3.json('src/data/tsne_data.json')
+d3.json('tsne_data.json')
     .catch(error => {
         console.warn("Failed to load 'src/data/tsne_data.json'. Using mock data instead.", error);
         return createMockData();
